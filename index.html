@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="th">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Table Order MVP</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<header>
+  <div class="brand">🍽️ Table Order</div>
+  <nav>
+    <button class="nav active" data-page="customer">ลูกค้า</button>
+    <button class="nav" data-page="kitchen">ร้าน</button>
+  </nav>
+</header>
+
+<main>
+<section id="customer" class="page active">
+  <div class="hero">
+    <h1>เมนูอาหาร</h1>
+    <p>เลือกโต๊ะ แล้วเลือกอาหารที่ต้องการ</p>
+  </div>
+  <label class="label">โต๊ะ</label>
+  <select id="tableSelect"></select>
+  <div id="menu" class="menu"></div>
+  <div class="cart">
+    <div class="cart-head"><h2>ตะกร้า</h2><span id="cartCount">0 รายการ</span></div>
+    <div id="cartItems"></div>
+    <div class="total"><span>รวม</span><strong id="cartTotal">฿0</strong></div>
+    <button id="placeOrder" class="primary">ส่งออเดอร์</button>
+  </div>
+</section>
+
+<section id="kitchen" class="page">
+  <div class="hero">
+    <h1>📱 Dashboard ร้าน</h1>
+    <p>ออเดอร์ที่เข้ามาจะแสดงตรงนี้</p>
+  </div>
+  <div class="stats">
+    <div><small>ออเดอร์ทั้งหมด</small><b id="orderCount">0</b></div>
+    <div><small>รอรับออเดอร์</small><b id="newCount">0</b></div>
+    <div><small>ยอดขาย</small><b id="salesTotal">฿0</b></div>
+  </div>
+  <div id="orders"></div>
+  <button id="clearOrders" class="danger">ล้างออเดอร์ทั้งหมด</button>
+</section>
+</main>
+
+<div id="toast"></div>
+<script src="app.js"></script>
+</body>
+</html>
